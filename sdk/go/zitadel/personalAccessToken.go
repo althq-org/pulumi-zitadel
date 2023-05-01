@@ -70,6 +70,7 @@ func NewPersonalAccessToken(ctx *pulumi.Context,
 		"token",
 	})
 	opts = append(opts, secrets)
+	opts = pkgResourceDefaultOpts(opts)
 	var resource PersonalAccessToken
 	err := ctx.RegisterResource("zitadel:index/personalAccessToken:PersonalAccessToken", name, args, &resource, opts...)
 	if err != nil {

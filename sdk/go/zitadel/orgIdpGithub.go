@@ -107,6 +107,7 @@ func NewOrgIdpGithub(ctx *pulumi.Context,
 		"clientSecret",
 	})
 	opts = append(opts, secrets)
+	opts = pkgResourceDefaultOpts(opts)
 	var resource OrgIdpGithub
 	err := ctx.RegisterResource("zitadel:index/orgIdpGithub:OrgIdpGithub", name, args, &resource, opts...)
 	if err != nil {

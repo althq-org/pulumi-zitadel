@@ -131,6 +131,7 @@ func NewApplicationOidc(ctx *pulumi.Context,
 		"clientSecret",
 	})
 	opts = append(opts, secrets)
+	opts = pkgResourceDefaultOpts(opts)
 	var resource ApplicationOidc
 	err := ctx.RegisterResource("zitadel:index/applicationOidc:ApplicationOidc", name, args, &resource, opts...)
 	if err != nil {

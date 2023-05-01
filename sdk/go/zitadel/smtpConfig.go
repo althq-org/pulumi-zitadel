@@ -83,6 +83,7 @@ func NewSmtpConfig(ctx *pulumi.Context,
 		"password",
 	})
 	opts = append(opts, secrets)
+	opts = pkgResourceDefaultOpts(opts)
 	var resource SmtpConfig
 	err := ctx.RegisterResource("zitadel:index/smtpConfig:SmtpConfig", name, args, &resource, opts...)
 	if err != nil {

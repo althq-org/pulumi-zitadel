@@ -74,6 +74,7 @@ func NewSmsProviderTwilio(ctx *pulumi.Context,
 		"token",
 	})
 	opts = append(opts, secrets)
+	opts = pkgResourceDefaultOpts(opts)
 	var resource SmsProviderTwilio
 	err := ctx.RegisterResource("zitadel:index/smsProviderTwilio:SmsProviderTwilio", name, args, &resource, opts...)
 	if err != nil {

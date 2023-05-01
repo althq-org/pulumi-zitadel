@@ -179,6 +179,7 @@ func NewOrgIdpLdap(ctx *pulumi.Context,
 		"bindPassword",
 	})
 	opts = append(opts, secrets)
+	opts = pkgResourceDefaultOpts(opts)
 	var resource OrgIdpLdap
 	err := ctx.RegisterResource("zitadel:index/orgIdpLdap:OrgIdpLdap", name, args, &resource, opts...)
 	if err != nil {

@@ -85,6 +85,7 @@ func NewApplicationKey(ctx *pulumi.Context,
 		"keyDetails",
 	})
 	opts = append(opts, secrets)
+	opts = pkgResourceDefaultOpts(opts)
 	var resource ApplicationKey
 	err := ctx.RegisterResource("zitadel:index/applicationKey:ApplicationKey", name, args, &resource, opts...)
 	if err != nil {
