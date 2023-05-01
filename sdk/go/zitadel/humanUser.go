@@ -118,6 +118,7 @@ func NewHumanUser(ctx *pulumi.Context,
 		"initialPassword",
 	})
 	opts = append(opts, secrets)
+	opts = pkgResourceDefaultOpts(opts)
 	var resource HumanUser
 	err := ctx.RegisterResource("zitadel:index/humanUser:HumanUser", name, args, &resource, opts...)
 	if err != nil {

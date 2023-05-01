@@ -101,6 +101,7 @@ func NewIdpGoogle(ctx *pulumi.Context,
 		"clientSecret",
 	})
 	opts = append(opts, secrets)
+	opts = pkgResourceDefaultOpts(opts)
 	var resource IdpGoogle
 	err := ctx.RegisterResource("zitadel:index/idpGoogle:IdpGoogle", name, args, &resource, opts...)
 	if err != nil {

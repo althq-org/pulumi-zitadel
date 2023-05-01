@@ -76,6 +76,7 @@ func NewMachineKey(ctx *pulumi.Context,
 		"keyDetails",
 	})
 	opts = append(opts, secrets)
+	opts = pkgResourceDefaultOpts(opts)
 	var resource MachineKey
 	err := ctx.RegisterResource("zitadel:index/machineKey:MachineKey", name, args, &resource, opts...)
 	if err != nil {

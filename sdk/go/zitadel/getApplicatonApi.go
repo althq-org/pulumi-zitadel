@@ -41,6 +41,7 @@ import (
 //
 // ```
 func GetApplicatonApi(ctx *pulumi.Context, args *GetApplicatonApiArgs, opts ...pulumi.InvokeOption) (*GetApplicatonApiResult, error) {
+	opts = pkgInvokeDefaultOpts(opts)
 	var rv GetApplicatonApiResult
 	err := ctx.Invoke("zitadel:index/getApplicatonApi:getApplicatonApi", args, &rv, opts...)
 	if err != nil {

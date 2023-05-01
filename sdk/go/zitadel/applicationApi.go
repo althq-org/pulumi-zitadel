@@ -75,6 +75,7 @@ func NewApplicationApi(ctx *pulumi.Context,
 		"clientSecret",
 	})
 	opts = append(opts, secrets)
+	opts = pkgResourceDefaultOpts(opts)
 	var resource ApplicationApi
 	err := ctx.RegisterResource("zitadel:index/applicationApi:ApplicationApi", name, args, &resource, opts...)
 	if err != nil {

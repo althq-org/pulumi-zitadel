@@ -107,6 +107,7 @@ func NewOrgIdpGoogle(ctx *pulumi.Context,
 		"clientSecret",
 	})
 	opts = append(opts, secrets)
+	opts = pkgResourceDefaultOpts(opts)
 	var resource OrgIdpGoogle
 	err := ctx.RegisterResource("zitadel:index/orgIdpGoogle:OrgIdpGoogle", name, args, &resource, opts...)
 	if err != nil {

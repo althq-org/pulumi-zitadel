@@ -119,6 +119,7 @@ func NewOrgIdpAzureAd(ctx *pulumi.Context,
 		"clientSecret",
 	})
 	opts = append(opts, secrets)
+	opts = pkgResourceDefaultOpts(opts)
 	var resource OrgIdpAzureAd
 	err := ctx.RegisterResource("zitadel:index/orgIdpAzureAd:OrgIdpAzureAd", name, args, &resource, opts...)
 	if err != nil {

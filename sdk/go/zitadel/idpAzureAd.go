@@ -113,6 +113,7 @@ func NewIdpAzureAd(ctx *pulumi.Context,
 		"clientSecret",
 	})
 	opts = append(opts, secrets)
+	opts = pkgResourceDefaultOpts(opts)
 	var resource IdpAzureAd
 	err := ctx.RegisterResource("zitadel:index/idpAzureAd:IdpAzureAd", name, args, &resource, opts...)
 	if err != nil {
