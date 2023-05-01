@@ -19,9 +19,9 @@ package main
 import (
 	_ "embed"
 
-	"github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfbridge"
 	zitadel "github.com/althq-org/pulumi-zitadel/provider"
 	"github.com/althq-org/pulumi-zitadel/provider/pkg/version"
+	"github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfbridge"
 )
 
 //go:embed schema-embed.json

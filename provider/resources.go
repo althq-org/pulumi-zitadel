@@ -18,10 +18,10 @@ import (
 	"fmt"
 	"path/filepath"
 
+	"github.com/althq-org/pulumi-zitadel/provider/pkg/version"
 	"github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfbridge"
 	shim "github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfshim"
 	shimv2 "github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfshim/sdk-v2"
-	"github.com/althq-org/pulumi-zitadel/provider/pkg/version"
 	"github.com/pulumi/pulumi/sdk/v3/go/common/resource"
 	"github.com/zitadel/terraform-provider-zitadel/zitadel"
 )
@@ -80,7 +80,7 @@ func Provider() tfbridge.ProviderInfo {
 		Repository: "https://github.com/althq-org/pulumi-zitadel",
 		// The GitHub Org for the provider - defaults to `terraform-providers`. Note that this
 		// should match the TF provider module's require directive, not any replace directives.
-		GitHubOrg: "",
+		GitHubOrg: "zitadel",
 		Config:    map[string]*tfbridge.SchemaInfo{
 			// Add any required configuration here, or remove the example below if
 			// no additional points are required.
@@ -92,7 +92,7 @@ func Provider() tfbridge.ProviderInfo {
 			// },
 		},
 		PreConfigureCallback: preConfigureCallback,
-		Resources:            map[string]*tfbridge.ResourceInfo{
+		Resources: map[string]*tfbridge.ResourceInfo{
 			// Map each resource in the Terraform provider to a Pulumi type. Two examples
 			// are below - the single line form is the common case. The multi-line form is
 			// needed only if you wish to override types or other default options.
@@ -105,11 +105,89 @@ func Provider() tfbridge.ProviderInfo {
 			// 		"tags": {Type: tfbridge.MakeType(mainPkg, "Tags")},
 			// 	},
 			// },
+			"zitadel_action":                      {Tok: tfbridge.MakeResource(mainPkg, mainMod, "Action")},
+			"zitadel_application_api":             {Tok: tfbridge.MakeResource(mainPkg, mainMod, "ApplicationApi")},
+			"zitadel_application_key":             {Tok: tfbridge.MakeResource(mainPkg, mainMod, "ApplicationKey")},
+			"zitadel_application_oidc":            {Tok: tfbridge.MakeResource(mainPkg, mainMod, "ApplicationOidc")},
+			"zitadel_default_domain_policy":       {Tok: tfbridge.MakeResource(mainPkg, mainMod, "DefaultDomainPolicy")},
+			"zitadel_default_label_policy":        {Tok: tfbridge.MakeResource(mainPkg, mainMod, "DefaultLabelPolicy")},
+			"zitadel_default_lockout_policy":      {Tok: tfbridge.MakeResource(mainPkg, mainMod, "DefaultLockoutPolicy")},
+			"zitadel_default_login_policy":        {Tok: tfbridge.MakeResource(mainPkg, mainMod, "DefaultLoginPolicy")},
+			"zitadel_default_notification_policy": {Tok: tfbridge.MakeResource(mainPkg, mainMod, "DefaultNotificationPolicy")},
+			"zitadel_default_password_complexity_policy": {
+				Tok: tfbridge.MakeResource(mainPkg, mainMod, "DefaultPasswordComplexityPolicy"),
+			},
+			"zitadel_default_privacy_policy":     {Tok: tfbridge.MakeResource(mainPkg, mainMod, "DefaultPrivacyPolicy")},
+			"zitadel_domain":                     {Tok: tfbridge.MakeResource(mainPkg, mainMod, "Domain")},
+			"zitadel_domain_policy":              {Tok: tfbridge.MakeResource(mainPkg, mainMod, "DomainPolicy")},
+			"zitadel_human_user":                 {Tok: tfbridge.MakeResource(mainPkg, mainMod, "HumanUser")},
+			"zitadel_idp_azure_ad":               {Tok: tfbridge.MakeResource(mainPkg, mainMod, "IdpAzureAd")},
+			"zitadel_idp_github":                 {Tok: tfbridge.MakeResource(mainPkg, mainMod, "IdpGithub")},
+			"zitadel_idp_github_es":              {Tok: tfbridge.MakeResource(mainPkg, mainMod, "IdpGithubEs")},
+			"zitadel_idp_gitlab":                 {Tok: tfbridge.MakeResource(mainPkg, mainMod, "IdpGitlab")},
+			"zitadel_idp_gitlab_self_hosted":     {Tok: tfbridge.MakeResource(mainPkg, mainMod, "IdpGitlabSelfHosted")},
+			"zitadel_idp_google":                 {Tok: tfbridge.MakeResource(mainPkg, mainMod, "IdpGoogle")},
+			"zitadel_idp_ldap":                   {Tok: tfbridge.MakeResource(mainPkg, mainMod, "IdpLdap")},
+			"zitadel_instance_member":            {Tok: tfbridge.MakeResource(mainPkg, mainMod, "InstanceMember")},
+			"zitadel_label_policy":               {Tok: tfbridge.MakeResource(mainPkg, mainMod, "LabelPolicy")},
+			"zitadel_lockout_policy":             {Tok: tfbridge.MakeResource(mainPkg, mainMod, "LockoutPolicy")},
+			"zitadel_login_policy":               {Tok: tfbridge.MakeResource(mainPkg, mainMod, "LoginPolicy")},
+			"zitadel_machine_key":                {Tok: tfbridge.MakeResource(mainPkg, mainMod, "MachineKey")},
+			"zitadel_machine_user":               {Tok: tfbridge.MakeResource(mainPkg, mainMod, "MachineUser")},
+			"zitadel_notification_policy":        {Tok: tfbridge.MakeResource(mainPkg, mainMod, "NotificationPolicy")},
+			"zitadel_org":                        {Tok: tfbridge.MakeResource(mainPkg, mainMod, "Org")},
+			"zitadel_org_idp_azure_ad":           {Tok: tfbridge.MakeResource(mainPkg, mainMod, "OrgIdpAzureAd")},
+			"zitadel_org_idp_github":             {Tok: tfbridge.MakeResource(mainPkg, mainMod, "OrgIdpGithub")},
+			"zitadel_org_idp_github_es":          {Tok: tfbridge.MakeResource(mainPkg, mainMod, "OrgIdpGithubEs")},
+			"zitadel_org_idp_gitlab":             {Tok: tfbridge.MakeResource(mainPkg, mainMod, "OrgIdpGitlab")},
+			"zitadel_org_idp_gitlab_self_hosted": {Tok: tfbridge.MakeResource(mainPkg, mainMod, "OrgIdpGitlabSelfHosted")},
+			"zitadel_org_idp_google":             {Tok: tfbridge.MakeResource(mainPkg, mainMod, "OrgIdpGoogle")},
+			"zitadel_org_idp_jwt":                {Tok: tfbridge.MakeResource(mainPkg, mainMod, "OrgIdpJwt")},
+			"zitadel_org_idp_ldap":               {Tok: tfbridge.MakeResource(mainPkg, mainMod, "OrgIdpLdap")},
+			"zitadel_org_idp_oidc":               {Tok: tfbridge.MakeResource(mainPkg, mainMod, "OrgIdpOidc")},
+			"zitadel_org_member":                 {Tok: tfbridge.MakeResource(mainPkg, mainMod, "OrgMember")},
+			"zitadel_password_complexity_policy": {Tok: tfbridge.MakeResource(mainPkg, mainMod, "PasswordComplexityPolicy")},
+			"zitadel_personal_access_token":      {Tok: tfbridge.MakeResource(mainPkg, mainMod, "PersonalAccessToken")},
+			"zitadel_privacy_policy":             {Tok: tfbridge.MakeResource(mainPkg, mainMod, "PrivacyPolicy")},
+			"zitadel_project":                    {Tok: tfbridge.MakeResource(mainPkg, mainMod, "Project")},
+			"zitadel_project_grant":              {Tok: tfbridge.MakeResource(mainPkg, mainMod, "ProjectGrant")},
+			"zitadel_project_grant_member":       {Tok: tfbridge.MakeResource(mainPkg, mainMod, "ProjectGrantMember")},
+			"zitadel_project_member":             {Tok: tfbridge.MakeResource(mainPkg, mainMod, "ProjectMember")},
+			"zitadel_project_role":               {Tok: tfbridge.MakeResource(mainPkg, mainMod, "ProjectRole")},
+			"zitadel_sms_provider_twilio":        {Tok: tfbridge.MakeResource(mainPkg, mainMod, "SmsProviderTwilio")},
+			"zitadel_smtp_config":                {Tok: tfbridge.MakeResource(mainPkg, mainMod, "SmtpConfig")},
+			"zitadel_trigger_actions":            {Tok: tfbridge.MakeResource(mainPkg, mainMod, "TriggerActions")},
+			"zitadel_user_grant":                 {Tok: tfbridge.MakeResource(mainPkg, mainMod, "UserGrant")},
 		},
 		DataSources: map[string]*tfbridge.DataSourceInfo{
 			// Map each resource in the Terraform provider to a Pulumi function. An example
 			// is below.
 			// "aws_ami": {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getAmi")},
+			"zitadel_action":                     {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getAction")},
+			"zitadel_application_api":            {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getApplicatonApi")},
+			"zitadel_application_oidc":           {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getApplicatoinOidc")},
+			"zitadel_human_user":                 {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getHumanUser")},
+			"zitadel_idp_azure_ad":               {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getIdpAzureAd")},
+			"zitadel_idp_github":                 {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getIdpGithub")},
+			"zitadel_idp_github_es":              {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getIdpGithubEs")},
+			"zitadel_idp_gitlab":                 {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getIdpGitlab")},
+			"zitadel_idp_gitlab_self_hosted":     {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getIdpGitlabSelfHosted")},
+			"zitadel_idp_google":                 {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getIdpGoogle")},
+			"zitadel_idp_ldap":                   {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getIdpLdap")},
+			"zitadel_machine_user":               {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getMachineUser")},
+			"zitadel_org":                        {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getOrg")},
+			"zitadel_org_idp_azure_ad":           {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getOrgIdpAzureAd")},
+			"zitadel_org_idp_github":             {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getOrgIdpGithub")},
+			"zitadel_org_idp_github_es":          {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getOrgIdpGithubEs")},
+			"zitadel_org_idp_gitlab":             {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getOrgIdpGitlab")},
+			"zitadel_org_idp_gitlab_self_hosted": {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getOrgIdpGitlabSelfHosted")},
+			"zitadel_org_idp_google":             {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getOrgIdpGoogle")},
+			"zitadel_org_idp_ldap":               {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getOrgIdpLdap")},
+			"zitadel_org_jwt_idp":                {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getOrgJwtIdp")},
+			"zitadel_org_oidc_idp":               {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getOrgOidcIdp")},
+			"zitadel_project":                    {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getProject")},
+			"zitadel_project_role":               {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getProjectRole")},
+			"zitadel_trigger_actions":            {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getTriggerActions")},
 		},
 		JavaScript: &tfbridge.JavaScriptInfo{
 			// List any npm dependencies and their versions
