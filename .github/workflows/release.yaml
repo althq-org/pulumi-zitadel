@@ -56,7 +56,8 @@ jobs:
       fail-fast: true
       matrix:
         goversion:
-        - 1.17.x
+        - 1.19.8
+        #- 1.17.x
   publish_sdk:
     name: Publish SDKs
     runs-on: ubuntu-latest
