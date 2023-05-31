@@ -1918,8 +1918,8 @@ github.com/zenazn/goji v0.9.0/go.mod h1:7S9M489iMyHBNxwZnk9/EHS098H4/F6TATF2mIxt
 github.com/zitadel/logging v0.3.4/go.mod h1:aPpLQhE+v6ocNK0TWrBrd363hZ95KcI17Q1ixAQwZF0=
 github.com/zitadel/oidc v1.13.2 h1:DiwAgHtw1kKcngNzLjgv1/oRL1OjdYf3emEsFzQzraI=
 github.com/zitadel/oidc v1.13.2/go.mod h1:GUywRhXAiTvvjdRdXblmGknDOeMwrsdMxTRCypi6974=
-github.com/zitadel/terraform-provider-zitadel v1.0.0-alpha.16 h1:p2/YXglqct5q0kVuq8b6nhogQhnpabiVTO8c4e5j4ZI=
-github.com/zitadel/terraform-provider-zitadel v1.0.0-alpha.16/go.mod h1:2dd/RItKJ5y7asplSmc1B+gcecxUvW7/OKjLWe5IWPk=
+github.com/zitadel/terraform-provider-zitadel v1.0.0-alpha.17 h1:InL1pGCt/8rfgiicIGNJEZ76wz5h5hJZx3Gt9GpEoqo=
+github.com/zitadel/terraform-provider-zitadel v1.0.0-alpha.17/go.mod h1:2dd/RItKJ5y7asplSmc1B+gcecxUvW7/OKjLWe5IWPk=
 github.com/zitadel/zitadel-go/v2 v2.0.13 h1:TZ44dgEJHtJKsiAW2CbBIYiEjyHSrH8qZ5Wi1qUAP50=
 github.com/zitadel/zitadel-go/v2 v2.0.13/go.mod h1:T4tAZyYIsq+7dRzfnlJse1b60gjVczHJCMGE5Nqg0ak=
 go.etcd.io/bbolt v1.3.2/go.mod h1:IbVyRI1SCnLcuJnV2u8VeU0CEYM7e686BmAb1XKL+uU=

@@ -10,16 +10,16 @@ from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = [
-    'GetApplicatoinOidcResult',
-    'AwaitableGetApplicatoinOidcResult',
-    'get_applicatoin_oidc',
-    'get_applicatoin_oidc_output',
+    'GetApplicationOidcResult',
+    'AwaitableGetApplicationOidcResult',
+    'get_application_oidc',
+    'get_application_oidc_output',
 ]
 
 @pulumi.output_type
-class GetApplicatoinOidcResult:
+class GetApplicationOidcResult:
     """
-    A collection of values returned by getApplicatoinOidc.
+    A collection of values returned by getApplicationOidc.
     """
     def __init__(__self__, access_token_role_assertion=None, access_token_type=None, additional_origins=None, app_id=None, app_type=None, auth_method_type=None, clock_skew=None, dev_mode=None, grant_types=None, id=None, id_token_role_assertion=None, id_token_userinfo_assertion=None, name=None, org_id=None, post_logout_redirect_uris=None, project_id=None, redirect_uris=None, response_types=None, version=None):
         if access_token_role_assertion and not isinstance(access_token_role_assertion, bool):
@@ -233,12 +233,12 @@ class GetApplicatoinOidcResult:
         return pulumi.get(self, "version")
 
 
-class AwaitableGetApplicatoinOidcResult(GetApplicatoinOidcResult):
+class AwaitableGetApplicationOidcResult(GetApplicationOidcResult):
     # pylint: disable=using-constant-test
     def __await__(self):
         if False:
             yield self
-        return GetApplicatoinOidcResult(
+        return GetApplicationOidcResult(
             access_token_role_assertion=self.access_token_role_assertion,
             access_token_type=self.access_token_type,
             additional_origins=self.additional_origins,
@@ -260,10 +260,10 @@ class AwaitableGetApplicatoinOidcResult(GetApplicatoinOidcResult):
             version=self.version)
 
 
-def get_applicatoin_oidc(app_id: Optional[str] = None,
+def get_application_oidc(app_id: Optional[str] = None,
                          org_id: Optional[str] = None,
                          project_id: Optional[str] = None,
-                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetApplicatoinOidcResult:
+                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetApplicationOidcResult:
     """
     Datasource representing an OIDC application belonging to a project, with all configuration possibilities.
 
@@ -273,10 +273,10 @@ def get_applicatoin_oidc(app_id: Optional[str] = None,
     import pulumi
     import pulumi_zitadel as zitadel
 
-    oidc_application_applicatoin_oidc = zitadel.get_applicatoin_oidc(org_id=data["zitadel_org"]["org"]["id"],
+    oidc_application_application_oidc = zitadel.get_application_oidc(org_id=data["zitadel_org"]["org"]["id"],
         project_id=data["zitadel_project"]["project"]["id"],
         app_id="177073626925760515")
-    pulumi.export("oidcApplication", oidc_application_applicatoin_oidc)
+    pulumi.export("oidcApplication", oidc_application_application_oidc)
     ```
 
 
@@ -289,9 +289,9 @@ def get_applicatoin_oidc(app_id: Optional[str] = None,
     __args__['orgId'] = org_id
     __args__['projectId'] = project_id
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
-    __ret__ = pulumi.runtime.invoke('zitadel:index/getApplicatoinOidc:getApplicatoinOidc', __args__, opts=opts, typ=GetApplicatoinOidcResult).value
+    __ret__ = pulumi.runtime.invoke('zitadel:index/getApplicationOidc:getApplicationOidc', __args__, opts=opts, typ=GetApplicationOidcResult).value
 
-    return AwaitableGetApplicatoinOidcResult(
+    return AwaitableGetApplicationOidcResult(
         access_token_role_assertion=__ret__.access_token_role_assertion,
         access_token_type=__ret__.access_token_type,
         additional_origins=__ret__.additional_origins,
@@ -313,11 +313,11 @@ def get_applicatoin_oidc(app_id: Optional[str] = None,
         version=__ret__.version)
 
 
-@_utilities.lift_output_func(get_applicatoin_oidc)
-def get_applicatoin_oidc_output(app_id: Optional[pulumi.Input[str]] = None,
+@_utilities.lift_output_func(get_application_oidc)
+def get_application_oidc_output(app_id: Optional[pulumi.Input[str]] = None,
                                 org_id: Optional[pulumi.Input[str]] = None,
                                 project_id: Optional[pulumi.Input[str]] = None,
-                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetApplicatoinOidcResult]:
+                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetApplicationOidcResult]:
     """
     Datasource representing an OIDC application belonging to a project, with all configuration possibilities.
 
@@ -327,10 +327,10 @@ def get_applicatoin_oidc_output(app_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_zitadel as zitadel
 
-    oidc_application_applicatoin_oidc = zitadel.get_applicatoin_oidc(org_id=data["zitadel_org"]["org"]["id"],
+    oidc_application_application_oidc = zitadel.get_application_oidc(org_id=data["zitadel_org"]["org"]["id"],
         project_id=data["zitadel_project"]["project"]["id"],
         app_id="177073626925760515")
-    pulumi.export("oidcApplication", oidc_application_applicatoin_oidc)
+    pulumi.export("oidcApplication", oidc_application_application_oidc)
     ```
 
 

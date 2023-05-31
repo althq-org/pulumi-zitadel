@@ -10,16 +10,16 @@ from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = [
-    'GetApplicatonApiResult',
-    'AwaitableGetApplicatonApiResult',
-    'get_applicaton_api',
-    'get_applicaton_api_output',
+    'GetApplicationApiResult',
+    'AwaitableGetApplicationApiResult',
+    'get_application_api',
+    'get_application_api_output',
 ]
 
 @pulumi.output_type
-class GetApplicatonApiResult:
+class GetApplicationApiResult:
     """
-    A collection of values returned by getApplicatonApi.
+    A collection of values returned by getApplicationApi.
     """
     def __init__(__self__, app_id=None, auth_method_type=None, id=None, name=None, org_id=None, project_id=None):
         if app_id and not isinstance(app_id, str):
@@ -90,12 +90,12 @@ class GetApplicatonApiResult:
         return pulumi.get(self, "project_id")
 
 
-class AwaitableGetApplicatonApiResult(GetApplicatonApiResult):
+class AwaitableGetApplicationApiResult(GetApplicationApiResult):
     # pylint: disable=using-constant-test
     def __await__(self):
         if False:
             yield self
-        return GetApplicatonApiResult(
+        return GetApplicationApiResult(
             app_id=self.app_id,
             auth_method_type=self.auth_method_type,
             id=self.id,
@@ -104,10 +104,10 @@ class AwaitableGetApplicatonApiResult(GetApplicatonApiResult):
             project_id=self.project_id)
 
 
-def get_applicaton_api(app_id: Optional[str] = None,
-                       org_id: Optional[str] = None,
-                       project_id: Optional[str] = None,
-                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetApplicatonApiResult:
+def get_application_api(app_id: Optional[str] = None,
+                        org_id: Optional[str] = None,
+                        project_id: Optional[str] = None,
+                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetApplicationApiResult:
     """
     Datasource representing an API application belonging to a project, with all configuration possibilities.
 
@@ -117,10 +117,10 @@ def get_applicaton_api(app_id: Optional[str] = None,
     import pulumi
     import pulumi_zitadel as zitadel
 
-    api_application_applicaton_api = zitadel.get_applicaton_api(org_id=data["zitadel_org"]["org"]["id"],
+    api_application_application_api = zitadel.get_application_api(org_id=data["zitadel_org"]["org"]["id"],
         project_id=data["zitadel_project"]["project"]["id"],
         app_id="177073625566806019")
-    pulumi.export("apiApplication", api_application_applicaton_api)
+    pulumi.export("apiApplication", api_application_application_api)
     ```
 
 
@@ -133,9 +133,9 @@ def get_applicaton_api(app_id: Optional[str] = None,
     __args__['orgId'] = org_id
     __args__['projectId'] = project_id
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
-    __ret__ = pulumi.runtime.invoke('zitadel:index/getApplicatonApi:getApplicatonApi', __args__, opts=opts, typ=GetApplicatonApiResult).value
+    __ret__ = pulumi.runtime.invoke('zitadel:index/getApplicationApi:getApplicationApi', __args__, opts=opts, typ=GetApplicationApiResult).value
 
-    return AwaitableGetApplicatonApiResult(
+    return AwaitableGetApplicationApiResult(
         app_id=__ret__.app_id,
         auth_method_type=__ret__.auth_method_type,
         id=__ret__.id,
@@ -144,11 +144,11 @@ def get_applicaton_api(app_id: Optional[str] = None,
         project_id=__ret__.project_id)
 
 
-@_utilities.lift_output_func(get_applicaton_api)
-def get_applicaton_api_output(app_id: Optional[pulumi.Input[str]] = None,
-                              org_id: Optional[pulumi.Input[str]] = None,
-                              project_id: Optional[pulumi.Input[str]] = None,
-                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetApplicatonApiResult]:
+@_utilities.lift_output_func(get_application_api)
+def get_application_api_output(app_id: Optional[pulumi.Input[str]] = None,
+                               org_id: Optional[pulumi.Input[str]] = None,
+                               project_id: Optional[pulumi.Input[str]] = None,
+                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetApplicationApiResult]:
     """
     Datasource representing an API application belonging to a project, with all configuration possibilities.
 
@@ -158,10 +158,10 @@ def get_applicaton_api_output(app_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_zitadel as zitadel
 
-    api_application_applicaton_api = zitadel.get_applicaton_api(org_id=data["zitadel_org"]["org"]["id"],
+    api_application_application_api = zitadel.get_application_api(org_id=data["zitadel_org"]["org"]["id"],
         project_id=data["zitadel_project"]["project"]["id"],
         app_id="177073625566806019")
-    pulumi.export("apiApplication", api_application_applicaton_api)
+    pulumi.export("apiApplication", api_application_application_api)
     ```
 
 

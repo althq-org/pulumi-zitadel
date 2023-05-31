@@ -7196,10 +7196,10 @@
                 ]
             }
         },
-        "zitadel:index/getApplicatoinOidc:getApplicatoinOidc": {
-            "description": "Datasource representing an OIDC application belonging to a project, with all configuration possibilities.\n\n{{% examples %}}\n## Example Usage\n{{% example %}}\n\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as zitadel from \"@pulumi/zitadel\";\n\nconst oidcApplicationApplicatoinOidc = zitadel.getApplicatoinOidc({\n    orgId: data.zitadel_org.org.id,\n    projectId: data.zitadel_project.project.id,\n    appId: \"177073626925760515\",\n});\nexport const oidcApplication = oidcApplicationApplicatoinOidc;\n```\n```python\nimport pulumi\nimport pulumi_zitadel as zitadel\n\noidc_application_applicatoin_oidc = zitadel.get_applicatoin_oidc(org_id=data[\"zitadel_org\"][\"org\"][\"id\"],\n    project_id=data[\"zitadel_project\"][\"project\"][\"id\"],\n    app_id=\"177073626925760515\")\npulumi.export(\"oidcApplication\", oidc_application_applicatoin_oidc)\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Zitadel = Pulumi.Zitadel;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var oidcApplicationApplicatoinOidc = Zitadel.GetApplicatoinOidc.Invoke(new()\n    {\n        OrgId = data.Zitadel_org.Org.Id,\n        ProjectId = data.Zitadel_project.Project.Id,\n        AppId = \"177073626925760515\",\n    });\n\n    return new Dictionary\u003cstring, object?\u003e\n    {\n        [\"oidcApplication\"] = oidcApplicationApplicatoinOidc,\n    };\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi-zitadel/sdk/go/zitadel\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\toidcApplicationApplicatoinOidc, err := zitadel.GetApplicatoinOidc(ctx, \u0026zitadel.GetApplicatoinOidcArgs{\n\t\t\tOrgId:     data.Zitadel_org.Org.Id,\n\t\t\tProjectId: data.Zitadel_project.Project.Id,\n\t\t\tAppId:     \"177073626925760515\",\n\t\t}, nil)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\tctx.Export(\"oidcApplication\", oidcApplicationApplicatoinOidc)\n\t\treturn nil\n\t})\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.pulumi.zitadel.ZitadelFunctions;\nimport com.pulumi.zitadel.inputs.GetApplicatoinOidcArgs;\nimport java.util.List;\nimport java.util.ArrayList;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        final var oidcApplicationApplicatoinOidc = ZitadelFunctions.getApplicatoinOidc(GetApplicatoinOidcArgs.builder()\n            .orgId(data.zitadel_org().org().id())\n            .projectId(data.zitadel_project().project().id())\n            .appId(\"177073626925760515\")\n            .build());\n\n        ctx.export(\"oidcApplication\", oidcApplicationApplicatoinOidc.applyValue(getApplicatoinOidcResult -\u003e getApplicatoinOidcResult));\n    }\n}\n```\n```yaml\nvariables:\n  oidcApplicationApplicatoinOidc:\n    fn::invoke:\n      Function: zitadel:getApplicatoinOidc\n      Arguments:\n        orgId: ${data.zitadel_org.org.id}\n        projectId: ${data.zitadel_project.project.id}\n        appId: '177073626925760515'\noutputs:\n  oidcApplication: ${oidcApplicationApplicatoinOidc}\n```\n{{% /example %}}\n{{% /examples %}}",
+        "zitadel:index/getApplicationApi:getApplicationApi": {
+            "description": "Datasource representing an API application belonging to a project, with all configuration possibilities.\n\n{{% examples %}}\n## Example Usage\n{{% example %}}\n\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as zitadel from \"@pulumi/zitadel\";\n\nconst apiApplicationApplicationApi = zitadel.getApplicationApi({\n    orgId: data.zitadel_org.org.id,\n    projectId: data.zitadel_project.project.id,\n    appId: \"177073625566806019\",\n});\nexport const apiApplication = apiApplicationApplicationApi;\n```\n```python\nimport pulumi\nimport pulumi_zitadel as zitadel\n\napi_application_application_api = zitadel.get_application_api(org_id=data[\"zitadel_org\"][\"org\"][\"id\"],\n    project_id=data[\"zitadel_project\"][\"project\"][\"id\"],\n    app_id=\"177073625566806019\")\npulumi.export(\"apiApplication\", api_application_application_api)\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Zitadel = Pulumi.Zitadel;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var apiApplicationApplicationApi = Zitadel.GetApplicationApi.Invoke(new()\n    {\n        OrgId = data.Zitadel_org.Org.Id,\n        ProjectId = data.Zitadel_project.Project.Id,\n        AppId = \"177073625566806019\",\n    });\n\n    return new Dictionary\u003cstring, object?\u003e\n    {\n        [\"apiApplication\"] = apiApplicationApplicationApi,\n    };\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi-zitadel/sdk/go/zitadel\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\tapiApplicationApplicationApi, err := zitadel.LookupApplicationApi(ctx, \u0026zitadel.LookupApplicationApiArgs{\n\t\t\tOrgId:     data.Zitadel_org.Org.Id,\n\t\t\tProjectId: data.Zitadel_project.Project.Id,\n\t\t\tAppId:     \"177073625566806019\",\n\t\t}, nil)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\tctx.Export(\"apiApplication\", apiApplicationApplicationApi)\n\t\treturn nil\n\t})\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.pulumi.zitadel.ZitadelFunctions;\nimport com.pulumi.zitadel.inputs.GetApplicationApiArgs;\nimport java.util.List;\nimport java.util.ArrayList;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        final var apiApplicationApplicationApi = ZitadelFunctions.getApplicationApi(GetApplicationApiArgs.builder()\n            .orgId(data.zitadel_org().org().id())\n            .projectId(data.zitadel_project().project().id())\n            .appId(\"177073625566806019\")\n            .build());\n\n        ctx.export(\"apiApplication\", apiApplicationApplicationApi.applyValue(getApplicationApiResult -\u003e getApplicationApiResult));\n    }\n}\n```\n```yaml\nvariables:\n  apiApplicationApplicationApi:\n    fn::invoke:\n      Function: zitadel:getApplicationApi\n      Arguments:\n        orgId: ${data.zitadel_org.org.id}\n        projectId: ${data.zitadel_project.project.id}\n        appId: '177073625566806019'\noutputs:\n  apiApplication: ${apiApplicationApplicationApi}\n```\n{{% /example %}}\n{{% /examples %}}",
             "inputs": {
-                "description": "A collection of arguments for invoking getApplicatoinOidc.\n",
+                "description": "A collection of arguments for invoking getApplicationApi.\n",
                 "properties": {
                     "appId": {
                         "type": "string",
@@ -7222,7 +7222,71 @@
                 ]
             },
             "outputs": {
-                "description": "A collection of values returned by getApplicatoinOidc.\n",
+                "description": "A collection of values returned by getApplicationApi.\n",
+                "properties": {
+                    "appId": {
+                        "type": "string",
+                        "description": "The ID of this resource.\n"
+                    },
+                    "authMethodType": {
+                        "type": "string",
+                        "description": "Auth method type\n"
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "The provider-assigned unique ID for this managed resource.\n"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Name of the application\n"
+                    },
+                    "orgId": {
+                        "type": "string",
+                        "description": "orgID of the application\n"
+                    },
+                    "projectId": {
+                        "type": "string",
+                        "description": "ID of the project\n"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "appId",
+                    "authMethodType",
+                    "name",
+                    "orgId",
+                    "projectId",
+                    "id"
+                ]
+            }
+        },
+        "zitadel:index/getApplicationOidc:getApplicationOidc": {
+            "description": "Datasource representing an OIDC application belonging to a project, with all configuration possibilities.\n\n{{% examples %}}\n## Example Usage\n{{% example %}}\n\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as zitadel from \"@pulumi/zitadel\";\n\nconst oidcApplicationApplicationOidc = zitadel.getApplicationOidc({\n    orgId: data.zitadel_org.org.id,\n    projectId: data.zitadel_project.project.id,\n    appId: \"177073626925760515\",\n});\nexport const oidcApplication = oidcApplicationApplicationOidc;\n```\n```python\nimport pulumi\nimport pulumi_zitadel as zitadel\n\noidc_application_application_oidc = zitadel.get_application_oidc(org_id=data[\"zitadel_org\"][\"org\"][\"id\"],\n    project_id=data[\"zitadel_project\"][\"project\"][\"id\"],\n    app_id=\"177073626925760515\")\npulumi.export(\"oidcApplication\", oidc_application_application_oidc)\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Zitadel = Pulumi.Zitadel;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var oidcApplicationApplicationOidc = Zitadel.GetApplicationOidc.Invoke(new()\n    {\n        OrgId = data.Zitadel_org.Org.Id,\n        ProjectId = data.Zitadel_project.Project.Id,\n        AppId = \"177073626925760515\",\n    });\n\n    return new Dictionary\u003cstring, object?\u003e\n    {\n        [\"oidcApplication\"] = oidcApplicationApplicationOidc,\n    };\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi-zitadel/sdk/go/zitadel\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\toidcApplicationApplicationOidc, err := zitadel.LookupApplicationOidc(ctx, \u0026zitadel.LookupApplicationOidcArgs{\n\t\t\tOrgId:     data.Zitadel_org.Org.Id,\n\t\t\tProjectId: data.Zitadel_project.Project.Id,\n\t\t\tAppId:     \"177073626925760515\",\n\t\t}, nil)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\tctx.Export(\"oidcApplication\", oidcApplicationApplicationOidc)\n\t\treturn nil\n\t})\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.pulumi.zitadel.ZitadelFunctions;\nimport com.pulumi.zitadel.inputs.GetApplicationOidcArgs;\nimport java.util.List;\nimport java.util.ArrayList;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        final var oidcApplicationApplicationOidc = ZitadelFunctions.getApplicationOidc(GetApplicationOidcArgs.builder()\n            .orgId(data.zitadel_org().org().id())\n            .projectId(data.zitadel_project().project().id())\n            .appId(\"177073626925760515\")\n            .build());\n\n        ctx.export(\"oidcApplication\", oidcApplicationApplicationOidc.applyValue(getApplicationOidcResult -\u003e getApplicationOidcResult));\n    }\n}\n```\n```yaml\nvariables:\n  oidcApplicationApplicationOidc:\n    fn::invoke:\n      Function: zitadel:getApplicationOidc\n      Arguments:\n        orgId: ${data.zitadel_org.org.id}\n        projectId: ${data.zitadel_project.project.id}\n        appId: '177073626925760515'\noutputs:\n  oidcApplication: ${oidcApplicationApplicationOidc}\n```\n{{% /example %}}\n{{% /examples %}}",
+            "inputs": {
+                "description": "A collection of arguments for invoking getApplicationOidc.\n",
+                "properties": {
+                    "appId": {
+                        "type": "string",
+                        "description": "The ID of this resource.\n"
+                    },
+                    "orgId": {
+                        "type": "string",
+                        "description": "orgID of the application\n"
+                    },
+                    "projectId": {
+                        "type": "string",
+                        "description": "ID of the project\n"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "appId",
+                    "orgId",
+                    "projectId"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getApplicationOidc.\n",
                 "properties": {
                     "accessTokenRoleAssertion": {
                         "type": "boolean",
@@ -7336,70 +7400,6 @@
                     "redirectUris",
                     "responseTypes",
                     "version",
-                    "id"
-                ]
-            }
-        },
-        "zitadel:index/getApplicatonApi:getApplicatonApi": {
-            "description": "Datasource representing an API application belonging to a project, with all configuration possibilities.\n\n{{% examples %}}\n## Example Usage\n{{% example %}}\n\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as zitadel from \"@pulumi/zitadel\";\n\nconst apiApplicationApplicatonApi = zitadel.getApplicatonApi({\n    orgId: data.zitadel_org.org.id,\n    projectId: data.zitadel_project.project.id,\n    appId: \"177073625566806019\",\n});\nexport const apiApplication = apiApplicationApplicatonApi;\n```\n```python\nimport pulumi\nimport pulumi_zitadel as zitadel\n\napi_application_applicaton_api = zitadel.get_applicaton_api(org_id=data[\"zitadel_org\"][\"org\"][\"id\"],\n    project_id=data[\"zitadel_project\"][\"project\"][\"id\"],\n    app_id=\"177073625566806019\")\npulumi.export(\"apiApplication\", api_application_applicaton_api)\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Zitadel = Pulumi.Zitadel;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var apiApplicationApplicatonApi = Zitadel.GetApplicatonApi.Invoke(new()\n    {\n        OrgId = data.Zitadel_org.Org.Id,\n        ProjectId = data.Zitadel_project.Project.Id,\n        AppId = \"177073625566806019\",\n    });\n\n    return new Dictionary\u003cstring, object?\u003e\n    {\n        [\"apiApplication\"] = apiApplicationApplicatonApi,\n    };\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi-zitadel/sdk/go/zitadel\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\tapiApplicationApplicatonApi, err := zitadel.GetApplicatonApi(ctx, \u0026zitadel.GetApplicatonApiArgs{\n\t\t\tOrgId:     data.Zitadel_org.Org.Id,\n\t\t\tProjectId: data.Zitadel_project.Project.Id,\n\t\t\tAppId:     \"177073625566806019\",\n\t\t}, nil)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\tctx.Export(\"apiApplication\", apiApplicationApplicatonApi)\n\t\treturn nil\n\t})\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.pulumi.zitadel.ZitadelFunctions;\nimport com.pulumi.zitadel.inputs.GetApplicatonApiArgs;\nimport java.util.List;\nimport java.util.ArrayList;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        final var apiApplicationApplicatonApi = ZitadelFunctions.getApplicatonApi(GetApplicatonApiArgs.builder()\n            .orgId(data.zitadel_org().org().id())\n            .projectId(data.zitadel_project().project().id())\n            .appId(\"177073625566806019\")\n            .build());\n\n        ctx.export(\"apiApplication\", apiApplicationApplicatonApi.applyValue(getApplicatonApiResult -\u003e getApplicatonApiResult));\n    }\n}\n```\n```yaml\nvariables:\n  apiApplicationApplicatonApi:\n    fn::invoke:\n      Function: zitadel:getApplicatonApi\n      Arguments:\n        orgId: ${data.zitadel_org.org.id}\n        projectId: ${data.zitadel_project.project.id}\n        appId: '177073625566806019'\noutputs:\n  apiApplication: ${apiApplicationApplicatonApi}\n```\n{{% /example %}}\n{{% /examples %}}",
-            "inputs": {
-                "description": "A collection of arguments for invoking getApplicatonApi.\n",
-                "properties": {
-                    "appId": {
-                        "type": "string",
-                        "description": "The ID of this resource.\n"
-                    },
-                    "orgId": {
-                        "type": "string",
-                        "description": "orgID of the application\n"
-                    },
-                    "projectId": {
-                        "type": "string",
-                        "description": "ID of the project\n"
-                    }
-                },
-                "type": "object",
-                "required": [
-                    "appId",
-                    "orgId",
-                    "projectId"
-                ]
-            },
-            "outputs": {
-                "description": "A collection of values returned by getApplicatonApi.\n",
-                "properties": {
-                    "appId": {
-                        "type": "string",
-                        "description": "The ID of this resource.\n"
-                    },
-                    "authMethodType": {
-                        "type": "string",
-                        "description": "Auth method type\n"
-                    },
-                    "id": {
-                        "type": "string",
-                        "description": "The provider-assigned unique ID for this managed resource.\n"
-                    },
-                    "name": {
-                        "type": "string",
-                        "description": "Name of the application\n"
-                    },
-                    "orgId": {
-                        "type": "string",
-                        "description": "orgID of the application\n"
-                    },
-                    "projectId": {
-                        "type": "string",
-                        "description": "ID of the project\n"
-                    }
-                },
-                "type": "object",
-                "required": [
-                    "appId",
-                    "authMethodType",
-                    "name",
-                    "orgId",
-                    "projectId",
                     "id"
                 ]
             }

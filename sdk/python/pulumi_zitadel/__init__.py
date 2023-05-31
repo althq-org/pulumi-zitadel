@@ -19,8 +19,8 @@ from .default_privacy_policy import *
 from .domain import *
 from .domain_policy import *
 from .get_action import *
-from .get_applicatoin_oidc import *
-from .get_applicaton_api import *
+from .get_application_api import *
+from .get_application_oidc import *
 from .get_human_user import *
 from .get_idp_azure_ad import *
 from .get_idp_github import *
