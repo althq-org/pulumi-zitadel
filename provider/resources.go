@@ -113,6 +113,7 @@ func Provider() tfbridge.ProviderInfo {
 			"zitadel_default_label_policy":        {Tok: tfbridge.MakeResource(mainPkg, mainMod, "DefaultLabelPolicy")},
 			"zitadel_default_lockout_policy":      {Tok: tfbridge.MakeResource(mainPkg, mainMod, "DefaultLockoutPolicy")},
 			"zitadel_default_login_policy":        {Tok: tfbridge.MakeResource(mainPkg, mainMod, "DefaultLoginPolicy")},
+			"zitadel_default_oidc_settings":        {Tok: tfbridge.MakeResource(mainPkg, mainMod, "DefaultOidcSettings")},
 			"zitadel_default_notification_policy": {Tok: tfbridge.MakeResource(mainPkg, mainMod, "DefaultNotificationPolicy")},
 			"zitadel_default_password_complexity_policy": {
 				Tok: tfbridge.MakeResource(mainPkg, mainMod, "DefaultPasswordComplexityPolicy"),
@@ -166,6 +167,7 @@ func Provider() tfbridge.ProviderInfo {
 			"zitadel_action":                     {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getAction")},
 			"zitadel_application_api":            {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getApplicationApi")},
 			"zitadel_application_oidc":           {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getApplicationOidc")},
+			"zitadel_default_oidc_settings":                 {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getDefaultOidcSettings")},
 			"zitadel_human_user":                 {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getHumanUser")},
 			"zitadel_idp_azure_ad":               {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getIdpAzureAd")},
 			"zitadel_idp_github":                 {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getIdpGithub")},
@@ -176,6 +178,7 @@ func Provider() tfbridge.ProviderInfo {
 			"zitadel_idp_ldap":                   {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getIdpLdap")},
 			"zitadel_machine_user":               {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getMachineUser")},
 			"zitadel_org":                        {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getOrg")},
+			"zitadel_orgs":                        {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getOrgs")},
 			"zitadel_org_idp_azure_ad":           {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getOrgIdpAzureAd")},
 			"zitadel_org_idp_github":             {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getOrgIdpGithub")},
 			"zitadel_org_idp_github_es":          {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getOrgIdpGithubEs")},
