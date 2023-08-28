@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: pulumi-zitadel
-Version: 0.0.1
+Version: 1.0.0a21+dirty
 Summary: A Pulumi package for creating and managing zitadel cloud resources.
 Home-page: https://www.pulumi.com
 License: Apache-2.0

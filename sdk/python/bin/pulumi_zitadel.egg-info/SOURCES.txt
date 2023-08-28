@@ -1,5 +1,7 @@
+Pulumi.yaml
 README.md
 setup.py
+pulumi_zitadel/README.md
 pulumi_zitadel/__init__.py
 pulumi_zitadel/_utilities.py
 pulumi_zitadel/action.py
@@ -11,6 +13,7 @@ pulumi_zitadel/default_label_policy.py
 pulumi_zitadel/default_lockout_policy.py
 pulumi_zitadel/default_login_policy.py
 pulumi_zitadel/default_notification_policy.py
+pulumi_zitadel/default_oidc_settings.py
 pulumi_zitadel/default_password_complexity_policy.py
 pulumi_zitadel/default_privacy_policy.py
 pulumi_zitadel/domain.py
@@ -18,6 +21,7 @@ pulumi_zitadel/domain_policy.py
 pulumi_zitadel/get_action.py
 pulumi_zitadel/get_application_api.py
 pulumi_zitadel/get_application_oidc.py
+pulumi_zitadel/get_default_oidc_settings.py
 pulumi_zitadel/get_human_user.py
 pulumi_zitadel/get_idp_azure_ad.py
 pulumi_zitadel/get_idp_github.py
@@ -37,6 +41,7 @@ pulumi_zitadel/get_org_idp_google.py
 pulumi_zitadel/get_org_idp_ldap.py
 pulumi_zitadel/get_org_jwt_idp.py
 pulumi_zitadel/get_org_oidc_idp.py
+pulumi_zitadel/get_orgs.py
 pulumi_zitadel/get_project.py
 pulumi_zitadel/get_project_role.py
 pulumi_zitadel/get_trigger_actions.py
@@ -88,4 +93,5 @@ pulumi_zitadel.egg-info/not-zip-safe
 pulumi_zitadel.egg-info/requires.txt
 pulumi_zitadel.egg-info/top_level.txt
 pulumi_zitadel/config/__init__.py
+pulumi_zitadel/config/__init__.pyi
 pulumi_zitadel/config/vars.py
