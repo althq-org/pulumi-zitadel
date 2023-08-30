@@ -1,3 +1,3 @@
 module github.com/althq-org/pulumi-zitadel/sdk
 
-go 1.17
+go 1.18
