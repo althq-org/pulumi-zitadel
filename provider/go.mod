@@ -2,12 +2,16 @@ module github.com/althq-org/pulumi-zitadel/provider
 
 go 1.18
 
+// replace (
+//	github.com/hashicorp/terraform-plugin-sdk/v2 => github.com/pulumi/terraform-plugin-sdk/v2 upstream-v2.27.0
+// )
+
 replace github.com/hashicorp/terraform-plugin-sdk/v2 => github.com/pulumi/terraform-plugin-sdk/v2 v2.0.0-20220824175045-450992f2f5b9
 
 require (
 	github.com/pulumi/pulumi-terraform-bridge/v3 v3.45.3
 	github.com/pulumi/pulumi/sdk/v3 v3.65.1
-	github.com/zitadel/terraform-provider-zitadel v1.0.0-alpha.21
+	github.com/zitadel/terraform-provider-zitadel v1.0.0
 )
 
 require (
