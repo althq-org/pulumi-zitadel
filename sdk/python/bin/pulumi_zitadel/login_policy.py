@@ -41,7 +41,7 @@ class LoginPolicyArgs:
         :param pulumi.Input[bool] allow_register: defines if a person is allowed to register a user on this organisation
         :param pulumi.Input[str] default_redirect_uri: defines where the user will be redirected to if the login is started without app context (e.g. from mail)
         :param pulumi.Input[bool] force_mfa: defines if a user MUST use a multi factor to log in
-        :param pulumi.Input[bool] force_mfa_local_only: if activated, only local authenticated users are forced to use MFA. Authentication through IDPs won't prompt a MFA step in the login.
+        :param pulumi.Input[bool] force_mfa_local_only: if activated, ZITADEL only enforces MFA on local authentications. On authentications through MFA, ZITADEL won't prompt for MFA.
         :param pulumi.Input[bool] hide_password_reset: defines if password reset link should be shown in the login screen
         :param pulumi.Input[bool] ignore_unknown_usernames: defines if unknown username on login screen directly return an error or always display the password screen
         :param pulumi.Input[str] passwordless_type: defines if passwordless is allowed for users
@@ -144,7 +144,7 @@ class LoginPolicyArgs:
     @pulumi.getter(name="forceMfaLocalOnly")
     def force_mfa_local_only(self) -> pulumi.Input[bool]:
         """
-        if activated, only local authenticated users are forced to use MFA. Authentication through IDPs won't prompt a MFA step in the login.
+        if activated, ZITADEL only enforces MFA on local authentications. On authentications through MFA, ZITADEL won't prompt for MFA.
         """
         return pulumi.get(self, "force_mfa_local_only")
 
@@ -354,7 +354,7 @@ class _LoginPolicyState:
         :param pulumi.Input[bool] disable_login_with_email: defines if user can additionally (to the loginname) be identified by their verified email address
         :param pulumi.Input[bool] disable_login_with_phone: defines if user can additionally (to the loginname) be identified by their verified phone number
         :param pulumi.Input[bool] force_mfa: defines if a user MUST use a multi factor to log in
-        :param pulumi.Input[bool] force_mfa_local_only: if activated, only local authenticated users are forced to use MFA. Authentication through IDPs won't prompt a MFA step in the login.
+        :param pulumi.Input[bool] force_mfa_local_only: if activated, ZITADEL only enforces MFA on local authentications. On authentications through MFA, ZITADEL won't prompt for MFA.
         :param pulumi.Input[bool] hide_password_reset: defines if password reset link should be shown in the login screen
         :param pulumi.Input[Sequence[pulumi.Input[str]]] idps: allowed idps to login or register
         :param pulumi.Input[bool] ignore_unknown_usernames: defines if unknown username on login screen directly return an error or always display the password screen
@@ -504,7 +504,7 @@ class _LoginPolicyState:
     @pulumi.getter(name="forceMfaLocalOnly")
     def force_mfa_local_only(self) -> Optional[pulumi.Input[bool]]:
         """
-        if activated, only local authenticated users are forced to use MFA. Authentication through IDPs won't prompt a MFA step in the login.
+        if activated, ZITADEL only enforces MFA on local authentications. On authentications through MFA, ZITADEL won't prompt for MFA.
         """
         return pulumi.get(self, "force_mfa_local_only")
 
@@ -728,7 +728,7 @@ class LoginPolicy(pulumi.CustomResource):
         :param pulumi.Input[bool] disable_login_with_email: defines if user can additionally (to the loginname) be identified by their verified email address
         :param pulumi.Input[bool] disable_login_with_phone: defines if user can additionally (to the loginname) be identified by their verified phone number
         :param pulumi.Input[bool] force_mfa: defines if a user MUST use a multi factor to log in
-        :param pulumi.Input[bool] force_mfa_local_only: if activated, only local authenticated users are forced to use MFA. Authentication through IDPs won't prompt a MFA step in the login.
+        :param pulumi.Input[bool] force_mfa_local_only: if activated, ZITADEL only enforces MFA on local authentications. On authentications through MFA, ZITADEL won't prompt for MFA.
         :param pulumi.Input[bool] hide_password_reset: defines if password reset link should be shown in the login screen
         :param pulumi.Input[Sequence[pulumi.Input[str]]] idps: allowed idps to login or register
         :param pulumi.Input[bool] ignore_unknown_usernames: defines if unknown username on login screen directly return an error or always display the password screen
@@ -930,7 +930,7 @@ class LoginPolicy(pulumi.CustomResource):
         :param pulumi.Input[bool] disable_login_with_email: defines if user can additionally (to the loginname) be identified by their verified email address
         :param pulumi.Input[bool] disable_login_with_phone: defines if user can additionally (to the loginname) be identified by their verified phone number
         :param pulumi.Input[bool] force_mfa: defines if a user MUST use a multi factor to log in
-        :param pulumi.Input[bool] force_mfa_local_only: if activated, only local authenticated users are forced to use MFA. Authentication through IDPs won't prompt a MFA step in the login.
+        :param pulumi.Input[bool] force_mfa_local_only: if activated, ZITADEL only enforces MFA on local authentications. On authentications through MFA, ZITADEL won't prompt for MFA.
         :param pulumi.Input[bool] hide_password_reset: defines if password reset link should be shown in the login screen
         :param pulumi.Input[Sequence[pulumi.Input[str]]] idps: allowed idps to login or register
         :param pulumi.Input[bool] ignore_unknown_usernames: defines if unknown username on login screen directly return an error or always display the password screen
@@ -1032,7 +1032,7 @@ class LoginPolicy(pulumi.CustomResource):
     @pulumi.getter(name="forceMfaLocalOnly")
     def force_mfa_local_only(self) -> pulumi.Output[bool]:
         """
-        if activated, only local authenticated users are forced to use MFA. Authentication through IDPs won't prompt a MFA step in the login.
+        if activated, ZITADEL only enforces MFA on local authentications. On authentications through MFA, ZITADEL won't prompt for MFA.
         """
         return pulumi.get(self, "force_mfa_local_only")
 
